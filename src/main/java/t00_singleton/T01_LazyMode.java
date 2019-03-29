@@ -27,7 +27,7 @@ public class T01_LazyMode {
 		return instance;
 	}
 
-	// 部分同步，这种方式比前述方式效率要高，避免了无意义的低效
+	// 部分同步，这种方式比前述方式效率要高，避免了无意义的低效（双重检测锁）
 	public static T01_LazyMode getInstance2() {
 		if (instance == null) {
 			synchronized (T01_LazyMode.class) {
